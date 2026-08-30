@@ -1,0 +1,71 @@
+{
+  "name": "vergemakkelijken-vsc",
+  "displayName": "vergemakkelijken",
+  "description": "code transformer",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edgro/vergemakkelijken-vsc"
+  },
+  "engines": {
+    "vscode": "^1.134.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "submenus": [
+      {
+        "id": "vergemakkelijken.menu",
+        "label": "vergemakkelijken"
+      }
+    ],
+    "commands": [
+      {
+        "command": "vergemakkelijken-vsc.cleanupComments",
+        "title": "Cleanup comments"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "vergemakkelijken.menu",
+          "group": "navigation"
+        }
+      ],
+      "vergemakkelijken.menu": [
+        {
+          "command": "vergemakkelijken-vsc.cleanupComments",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "package:vsix": "vsce package",
+    "package": "npm run compile && npx vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.134.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "typescript-eslint": "^8.61.1",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "@vscode/vsce": "^3.9.2"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}

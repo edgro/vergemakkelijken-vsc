@@ -1,0 +1,6 @@
+keep_comment_patterns:
+  - "^# noqa"
+  - "^# type: ignore"
+  - "^# pragma: no cover"
+  - "^# no-remove"
+  - "^#!"

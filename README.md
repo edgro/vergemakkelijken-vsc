@@ -1,6 +1,6 @@
 # vergemakkelijken
 
-A VS Code extension for cleaning Python comments according to a configurable allowlist.
+A VS Code extension for cleaning Python code. 
 
 ## Features
 
